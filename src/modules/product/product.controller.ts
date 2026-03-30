@@ -26,7 +26,7 @@ const getProducts = catchAsync(async (req: Request, res: Response) => {
 });
 
 const updateProductStock = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const id = req.params.id as string;
   const { stockQuantity } = req.body;
   const result = await ProductService.updateProductStock(id, stockQuantity);
 
@@ -39,7 +39,7 @@ const updateProductStock = catchAsync(async (req: Request, res: Response) => {
 });
 
 const updateProduct = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const id = req.params.id as string;
   const result = await ProductService.updateProduct(id, req.body);
 
   sendResponse(res, {
@@ -51,7 +51,7 @@ const updateProduct = catchAsync(async (req: Request, res: Response) => {
 });
 
 const deleteProduct = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const id = req.params.id as string;
   await ProductService.deleteProduct(id);
 
   sendResponse(res, {

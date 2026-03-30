@@ -31,7 +31,7 @@ Node.js + TypeScript backend API for inventory, products, categories, orders, ac
 
 ```bash
 git clone <your-repo-url>
-cd Backend
+cd stocksense-server
 ```
 
 2. Install dependencies
